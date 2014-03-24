@@ -47,9 +47,9 @@ public class UserResource {
             response = User.class,
             position = 1)
     public Response createUser2(
-            @ApiParam(value = "name that need to be deleted", required = true) @PathParam("username") String username,
-            @ApiParam(value = "Created user object", required = true) User user,
-            @ApiParam(value = "List of user object", required = true) java.util.List<User> users
+            @ApiParam(value = "name that need to be deleted", name = "username", required = true) String username,
+            @ApiParam(value = "Created user object", name = "user", required = true) User user,
+            @ApiParam(value = "List of user object", name = "users", required = true) java.util.List<User> users
     ) {
         userData.addUser(user);
         return Response.ok().entity(user).build();
