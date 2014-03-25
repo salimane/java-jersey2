@@ -27,6 +27,7 @@ import javax.ws.rs.core.Response;
 
 @Path("/v1/user")
 @Api(value = "/user", description = "Operations about user")
+@Consumes({"application/json", "application/xml"})
 @Produces({"application/json", "application/xml"})
 public class UserResource {
     static UserData userData = new UserData();
@@ -42,6 +43,7 @@ public class UserResource {
     }
 
     @POST
+    @Path("/create")
     @ApiOperation(value = "Create user",
             notes = "This can only be done by the logged in user.",
             response = User.class,
