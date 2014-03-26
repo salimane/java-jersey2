@@ -91,6 +91,11 @@
                     <groupId>org.glassfish.jersey.media</groupId>
                     <artifactId>jersey-media-multipart</artifactId>
                 </exclusion>
+		<!-- exclude JSR-311 since we're using Jersey 2 -->
+                <exclusion>
+                    <groupId>javax.ws.rs</groupId>
+                    <artifactId>jsr311-api</artifactId>
+                </exclusion>
             </exclusions>
         </dependency>
         <dependency>
